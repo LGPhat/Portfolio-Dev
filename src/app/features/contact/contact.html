@@ -1,0 +1,64 @@
+<section id="contact" class="contact-section py-100">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h6 class="text-primary fw-bold text-uppercase ls-2 mb-3">Kết nối ngay</h6>
+        <h2 class="display-4 fw-bold text-white mb-4">Bạn có dự án mới <br>trong đầu?<span>.</span></h2>
+        <p class="text-secondary-custom mb-5">
+          Sẵn sàng đồng hành cùng bạn tối ưu hóa <strong>EliteMart</strong>, phát triển <strong>Plugin Affiliate</strong> hoặc xây dựng ứng dụng <strong>Angular</strong> hiện đại.
+        </p>
+
+        <div class="contact-item d-flex align-items-center mb-4">
+          <div class="icon-circle me-3"><fa-icon [icon]="faEnvelope"></fa-icon></div>
+          <div>
+            <span class="d-block text-white-50 small">Email trực tiếp</span>
+            <a [href]="'mailto:' + email" class="text-white text-decoration-none fw-bold">{{ email }}</a>
+          </div>
+        </div>
+
+        <div class="commission-box mt-5 p-4 rounded-4 border border-primary border-opacity-25">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi bi-patch-check-fill text-primary me-2"></i>
+            <h5 class="text-white m-0">Chính sách đối tác</h5>
+          </div>
+          <p class="text-white-50 small m-0">
+            Tôi luôn áp dụng mức <strong>hoa hồng 5% mặc định</strong> cho các dự án giới thiệu thành công. Hãy cùng hợp tác và phát triển!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="contact-card p-4 p-md-5">
+          <form class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label text-white-50 small">Tên của bạn</label>
+              <input type="text" class="form-control custom-input" placeholder="Phát Lê...">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label text-white-50 small">Email liên hệ</label>
+              <input type="email" class="form-control custom-input" placeholder="name@domain.com">
+            </div>
+            <div class="col-12">
+              <label class="form-label text-white-50 small">Dịch vụ bạn cần</label>
+              <select class="form-select custom-input">
+                <option selected>Chọn dịch vụ...</option>
+                <option value="wordpress">Thiết kế Theme WordPress</option>
+                <option value="plugin">Plugin</option>
+                <option value="angular">Web Angular</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label text-white-50 small">Mô tả dự án</label>
+              <textarea class="form-control custom-input" rows="4" placeholder="Viết vài dòng về yêu cầu của bạn..."></textarea>
+            </div>
+            <div class="col-12 pt-2">
+              <button type="submit" class="btn btn-gradient w-100 py-3 fw-bold rounded-pill">
+                GỬI THÔNG TIN NGAY <i class="bi bi-send-fill ms-2"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

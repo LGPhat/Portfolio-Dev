@@ -1,0 +1,38 @@
+<section id="skills" class="skills-section py-100">
+  <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-lg-6">
+        <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">My Expertise</h6>
+        <h2 class="display-5 fw-bold text-white">Lộ trình năng lực<span>.</span></h2>
+      </div>
+      <div class="col-lg-6">
+        <p class="text-muted-custom mb-0">
+          Tôi tập trung vào việc tạo ra các sản phẩm Web không chỉ đẹp mà còn phải nhanh, chuẩn SEO và mang lại giá trị thực tế cho doanh nghiệp.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4" *ngFor="let s of skills()">
+        <div class="skill-card">
+          <div class="category-tag">{{ s.category }}</div>
+          <h3 class="text-white h4 my-3">{{ s.title }}</h3>
+          <p class="text-secondary-custom small mb-4">{{ s.desc }}</p>
+
+          <ul class="list-unstyled mb-0">
+            <li *ngFor="let item of s.items" class="d-flex align-items-center mb-2 text-white-50 small">
+              <i class="bi bi-check2-circle text-primary me-2"></i> {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 pt-4">
+      <p class="text-muted-custom small text-uppercase fw-bold ls-2 mb-3">Công cụ & Công nghệ</p>
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <span class="tech-tag" *ngFor="let tech of techStack()">{{ tech }}</span>
+      </div>
+    </div>
+  </div>
+</section>

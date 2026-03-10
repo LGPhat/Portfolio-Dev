@@ -1,0 +1,52 @@
+/* Không @import 'src/styles.scss' */
+
+.footer-section {
+  background-color: #0b1120; // Đậm hơn màu bg-dark chính (#0f172a) một chút
+  position: relative;
+
+  .footer-logo {
+    letter-spacing: -1px;
+
+    span {
+      color: #38bdf8;
+    }
+  }
+
+  .footer-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: #38bdf8;
+    }
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #38bdf8;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+  }
+
+  .text-primary {
+    color: #38bdf8 !important;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}

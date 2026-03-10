@@ -1,0 +1,169 @@
+.zalo-floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+
+  .zalo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .zalo-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #0068ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 104, 255, 0.4);
+  }
+
+  /* Hiệu ứng sóng nhấp nháy */
+  .pulse-ring,
+  .pulse-ring-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #0068ff;
+    opacity: 0.6;
+    animation: pulse 2s infinite;
+  }
+
+  .pulse-ring-2 {
+    animation-delay: 0.5s;
+  }
+
+  .zalo-text {
+    background: #fff;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: 0.4s ease;
+    pointer-events: none;
+  }
+
+  /* Hiển thị chữ khi di chuột vào */
+  &:hover {
+    .zalo-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .zalo-icon-wrapper {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* app.scss */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #0f172a; // Màu nền tối chuyên nghiệp của bạn
+}
+
+main {
+  transition: all 0.3s ease;
+
+  // Đối với Desktop
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Đối với Mobile: Chừa chỗ cho Nav (60px) và Tabbar (70px)
+  @media (max-width: 991px) {
+    padding-top: 60px; // Khớp với chiều cao MobileNav
+    padding-bottom: 90px; // Khớp với Tabbar + một khoảng thở an toàn
+  }
+}
+
+// Đảm bảo các section có khoảng cách đẹp trên mobile
+section {
+  @media (max-width: 991px) {
+    padding: 60px 0;
+    scroll-margin-top: 70px; // Giúp khi nhấn Tabbar cuộn đến không bị lấp tiêu đề
+  }
+}
+
+/* app.scss */
+@media (max-width: 991px) {
+
+  app-header,
+  app-hero,
+  app-skills,
+  app-projects,
+  app-contact,
+  app-footer {
+    display: none !important; // Triệt tiêu mọi dấu vết của Desktop trên Mobile
+  }
+}
+
+// Khi là màn hình điện thoại (dưới 992px)
+@media (max-width: 991px) {
+
+  .desktop-view,
+  app-header,
+  app-hero,
+  app-footer {
+    display: none !important;
+  }
+}
+
+// Khi là màn hình máy tính (từ 992px trở lên)
+@media (min-width: 992px) {
+
+  .mobile-view,
+  app-mobile-nav,
+  app-mobile-hero,
+  app-mobile-tabbar {
+    display: none !important;
+  }
+}
+
+.mobile-page-wrapper {
+  min-height: calc(100vh - 130px); // Chiều cao màn hình trừ Nav(60px) và Tabbar(70px)
+  padding-top: 60px;
+  padding-bottom: 80px;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

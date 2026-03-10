@@ -1,0 +1,62 @@
+header {
+  padding: 1.5rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+
+  .navbar-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.75rem;
+    line-height: 1; // Khóa dòng để không bị lệch
+    color: #fff;
+    margin: 0;
+
+    span {
+      color: #38bdf8;
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center; // Căn giữa icon và chữ theo trục dọc
+    height: 100%;
+
+    &:hover {
+      color: #38bdf8 !important;
+    }
+  }
+
+  // Căn chỉnh cho nút Hire Me
+  .btn-primary {
+    font-size: 0.9rem;
+    background-color: #007bff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: #0069d9;
+    }
+  }
+
+  // Khi Phát Lê cuộn trang
+  &.header-scrolled {
+    padding: 0.8rem 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Fix lỗi icon tuột nếu bạn vẫn muốn dùng icon nhỏ
+fa-icon,
+lucide-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle; // Ép icon nằm đúng baseline của chữ
+  margin-top: -2px; // Nhích nhẹ lên nếu font chữ có padding đáy lớn
+}

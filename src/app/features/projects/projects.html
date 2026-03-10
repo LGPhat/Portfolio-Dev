@@ -1,0 +1,37 @@
+<section id="projects" class="projects-section py-100">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="text-primary fw-bold text-uppercase ls-2">Sản phẩm tiêu biểu</h6>
+      <h2 class="display-5 fw-bold text-white">Dự án đã thực hiện<span>.</span></h2>
+    </div>
+
+    <div class="d-flex justify-content-center gap-2 mb-5">
+      <button *ngFor="let cat of categories()"
+              (click)="setCategory(cat)"
+              [class.active]="activeCategory() === cat"
+              class="filter-btn">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let p of filteredProjects()">
+        <a [href]="p.link" target="_blank" class="project-card-link">
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img [src]="p.image" [alt]="p.title" class="img-fluid">
+              <div class="project-overlay">
+                <span class="btn-view">Xem giao diện <i class="bi bi-arrow-up-right"></i></span>
+              </div>
+            </div>
+            <div class="project-info p-4">
+              <span class="badge-cat">{{ p.category }}</span>
+              <h3 class="h5 text-white mt-2">{{ p.title }}</h3>
+              <p class="text-muted-custom small mb-0">{{ p.desc }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

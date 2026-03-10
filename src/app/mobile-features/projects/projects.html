@@ -1,0 +1,39 @@
+<section class="projects-container" id="projects">
+  <div class="header-section px-4 mb-4">
+    <h2 class="title-gradient">Sản phẩm <span class="dot">.</span></h2>
+    <p class="subtitle">Giải pháp WordPress & Angular chuyên sâu</p>
+  </div>
+
+  <div class="projects-slider">
+    @for (item of projects; track item.title) {
+      <div class="project-slide">
+        <div class="glass-card">
+          <div class="card-image">
+            <img [src]="item.image" [alt]="item.title">
+            <div class="image-overlay"></div>
+            <span class="category-tag">{{ item.category }}</span>
+          </div>
+
+          <div class="card-content">
+            <h4 class="project-name">{{ item.title }}</h4>
+            <p class="project-desc">{{ item.description }}</p>
+
+            <div class="tech-row">
+              @for (tech of item.techs; track tech) {
+                <span class="tech-pill">{{ tech }}</span>
+              }
+            </div>
+
+            <div class="card-footer mt-3">
+              <button
+                class="btn-neo"
+                (click)="viewProject(item.link)">
+                Xem dự án <i class="bi bi-arrow-up-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

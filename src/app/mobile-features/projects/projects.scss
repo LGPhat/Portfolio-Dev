@@ -1,0 +1,108 @@
+// projects.scss
+.projects-container {
+  padding: 20px 0;
+  background: #020617; // Nền tối sâu thẳm cực kỳ sang trọng
+
+  .title-gradient {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    .dot {
+      color: #38bdf8;
+      -webkit-text-fill-color: #38bdf8;
+    }
+  }
+
+  .glass-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(12px); // Hiệu ứng kính mờ
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    height: 100%;
+    transition: transform 0.3s ease;
+
+    .card-image {
+      position: relative;
+      height: 160px;
+      margin: 10px;
+      border-radius: 20px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+      }
+
+      .category-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(56, 189, 248, 0.2);
+        color: #7dd3fc;
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.65rem;
+        font-weight: 600;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+    }
+
+    .card-content {
+      padding: 10px 15px 20px;
+
+      .project-name {
+        color: #f8fafc;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .project-desc {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+    }
+
+    .tech-pill {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #64748b;
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      margin-right: 5px;
+    }
+
+    .btn-neo {
+      width: 100%;
+      background: #fff;
+      color: #020617;
+      border: none;
+      padding: 12px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none; // Ngăn chặn việc bôi đen chữ khi nhấn giữ
+
+      &:active {
+        transform: scale(0.92); // Nút lún xuống khi nhấn
+        background-color: #e2e8f0;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

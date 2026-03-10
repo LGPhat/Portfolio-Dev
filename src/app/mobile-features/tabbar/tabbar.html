@@ -1,0 +1,21 @@
+<div class="mobile-tabbar-container d-flex justify-content-around align-items-center">
+  <div class="tab-item" [class.active]="activeTab() === 'home'" (click)="setActive('home')">
+    <i class="bi bi-house-door-fill"></i>
+    <span>Trang chủ</span>
+  </div>
+
+  <div class="tab-item" [class.active]="activeTab() === 'projects'" (click)="setActive('projects')">
+    <i class="bi bi-grid-fill"></i>
+    <span>Dự án</span>
+  </div>
+
+  <div class="tab-item" [class.active]="activeTab() === 'skills'" (click)="setActive('skills')">
+    <i class="bi bi-cpu-fill"></i>
+    <span>Kỹ năng</span>
+  </div>
+
+  <div class="tab-item" [class.active]="activeTab() === 'contact'" (click)="setActive('contact')">
+    <i class="bi bi-cpu-fill"></i>
+    <span>Liên hệ</span>
+  </div>
+</div>

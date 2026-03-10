@@ -1,0 +1,63 @@
+/* LƯU Ý: Tuyệt đối không @import 'src/styles.scss' để tránh lỗi biên dịch */
+
+.skills-section {
+  position: relative;
+
+  .text-primary {
+    color: #38bdf8 !important;
+  }
+
+  /* Màu của Phát Lê */
+
+  .skill-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      transform: translateY(-10px);
+      /* Hiệu ứng nâng nhẹ thay cho AOS */
+      background: rgba(30, 41, 59, 0.7);
+      border-color: #38bdf8;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 12px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+  }
+
+  .tech-tag {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+
+    &:hover {
+      color: #38bdf8;
+      border-color: #38bdf8;
+    }
+  }
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+.py-100 {
+  padding: 100px 0;
+}

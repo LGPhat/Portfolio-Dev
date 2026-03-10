@@ -1,0 +1,47 @@
+.mobile-tabbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(15, 23, 42, 0.95); // Đồng bộ màu nền tối
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  z-index: 9999;
+  padding-bottom: env(safe-area-inset-bottom); // Tránh bị che bởi thanh gạt của iPhone
+
+  .tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+
+    i {
+      font-size: 1.3rem;
+      margin-bottom: 2px;
+    }
+
+    span {
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    &.active {
+      color: #38bdf8; // Màu xanh thương hiệu
+      transform: translateY(-3px);
+
+      i {
+        filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+      }
+    }
+
+    &.contact-special {
+      text-decoration: none;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+  }
+}

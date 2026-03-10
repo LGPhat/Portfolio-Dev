@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
+
+// 1. Import file bootstrap
+@use "bootstrap/scss/bootstrap"with ($font-family-sans-serif: ('Plus Jakarta Sans', sans-serif));
+
+// 2. Import font trước (như bạn đã làm)
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+// 3. Cấu hình biến Bootstrap để dùng font Plus Jakarta Sans
+$font-family-sans-serif: 'Plus Jakarta Sans',
+sans-serif;
+
+// 4. Các cấu hình CSS riêng
+:root {
+  --primary: #38bdf8;
+  --bg-dark: #0f172a;
+  --text-main: #cbd5e1;
+  --text-light: #f8fafc;
+
+  /* Cập nhật biến font để dễ quản lý */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Bước 2: Áp dụng font mới cho toàn bộ ứng dụng */
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Giúp font hiển thị sắc nét hơn trên MacOS */
+}
+
+/* Các tiêu đề sẽ trông rất 'bén' với font này */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+  color: var(--text-light);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* Thu hẹp khoảng cách một chút cho tiêu đề thêm chuyên nghiệp */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* src/styles.scss */
+
+/* --- Tùy chỉnh thanh cuộn (Scrollbar) cho Phát Lê --- */
+
+/* 1. Dành cho Chrome, Edge, Safari và các trình duyệt Webkit */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Độ rộng của thanh cuộn */
+  background-color: #0f172a;
+  /* Màu nền của vùng thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+  /* Màu nền của đường ray */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  /* Màu của cục cuộn mặc định */
+  border-radius: 50px;
+  /* Bo tròn cho mềm mại */
+  border: 2px solid #0f172a;
+  /* Tạo khoảng trống giữa cục cuộn và đường ray */
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+  /* Chuyển sang màu Primary khi Phát Lê rê chuột vào */
+}
+
+/* 2. Dành cho Firefox (Sử dụng thuộc tính tiêu chuẩn mới) */
+html {
+  scrollbar-width: thin;
+  /* Làm thanh cuộn mỏng lại */
+  scrollbar-color: #1e293b #0f172a;
+  /* Màu cục cuộn và màu đường ray */
+}
+
+section {
+  /* Ép mọi section phải dừng cách mép trên 100px (bù cho chiều cao Header) */
+  scroll-margin-top: 100px;
+  display: block;
+  width: 100%;
+}
+
+// ==================================================================================== //
